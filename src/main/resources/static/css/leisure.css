@@ -1,0 +1,208 @@
+.strong_region {
+    font-size: large;
+}
+
+.select_sk{
+    width: 350px;
+    height: 4vh;
+}
+
+.btn_sk{
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 430px;
+    height: 6vh;
+    font-size: x-large;
+}
+
+.btn_sk:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+.strong_region2 {
+    font-size: large;
+}
+
+.input_sk {
+    width: 90px;
+    height: 4vh;
+}
+
+.select_lerad {
+    width: 260px;
+    height: 4vh;
+}
+
+.strong_region3 {
+    font-size: large;
+    position: relative;
+    right: 23px;
+}
+
+.check_lec {
+    width: 50px;
+    height: 2vh;
+}
+
+table.type03 {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  margin: auto;
+  width: 90%;
+  border-collaps:collapse;
+}
+table.type03 th {
+  width: 147px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #153d73;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+}
+table.type03 td {
+  width: 349px;
+  padding: 10px;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.div_box1 {
+  position: relative;
+  bottom: 350px;
+}
+
+#a_home {
+  position: relative;
+  right: 700px;
+  bottom: 10px;
+}
+
+#b_home {
+  position: relative;
+  right: 600px;
+  bottom: 10px;
+}
+
+#container {
+    overflow:hidden;
+    height:300px;
+    position:relative;
+}
+
+#mapWrapper {
+    width:100%;
+    height:300px;
+    z-index:1;
+}
+
+#rvWrapper {
+    width:50%;
+    height:300px;
+    top:0;
+    right:0;
+    position:absolute;z-index:0;
+}
+
+#container.view_roadview #mapWrapper {
+    width: 50%;
+}
+
+#roadviewControl {
+    position:absolute;
+    overflow:auto;
+    top:25px;
+    left:95%;
+    width:42px;
+    height:42px;
+    z-index: 2;cursor: pointer;
+    background: url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat;
+}
+
+#roadviewControl.active {
+    background-position:0 -350px;
+}
+
+.btn_map_control {
+    position: relative;
+    bottom: 473px;
+    z-index: 1;cursor: pointer;
+    left: 635px;
+}
+
+#b1 {background:#288CFF; left :50px; top : 10px;}/*전구 켜기 버튼 css속성*/
+#b2 {background:#288CFF; left :50px; top : 10px; }/*전구 끄기 버튼 css속성*/
+
+#roadviewControl2 {
+    position:absolute;
+    overflow:auto;
+    top: 8px;
+    left:90%;
+    width:42px;
+    height:42px;
+    z-index: 2;cursor: pointer;
+    background: url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat;
+}
+
+#roadviewControl2.active {
+    background-position:0 -350px;
+}
+
+.btn_map_control2 {
+    position: relative;
+    bottom: 490px;
+    z-index: 1;cursor: pointer;
+    left: 500px;
+}
+
+.list01 {width:500px; background:#fff; overflow:hidden;}
+.list01 li {float:left; margin:3px 0 3px -1px; padding:0 12px 0 14px; background:url(img/bu_bar01.gif) no-repeat left 2px; white-space:nowrap;}
+
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+#myform label:hover{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}

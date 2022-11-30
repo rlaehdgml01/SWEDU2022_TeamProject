@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>리뷰 작성 페이지</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/review.css" rel="stylesheet"/>
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <!--부트스트랩-->
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--주소 찾기 api-->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+    .masthead {
+        height: 1vh;
+
+    }
+
+    .h1-title {
+        position: relative;
+        bottom: 90px;
+    }
+
+     body {
+      font-size:9pt;
+    }
+    button {
+        font-size:9pt;
+    }
+    table {
+        margin: auto;
+        width: 850px;
+        border-collapse:collapse;
+        max-width:1000px;
+    }
+    th, td {
+
+    }
+    textarea {
+
+    }
+
+   </style>
+    <script type="text/javascript">
+        function logout_btn()
+      {
+        alert('로그아웃 되었습니다.');
+      }
+    </script>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/leisureSearch" id="a_home" style="font-size: x-large;">Leisure Map</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/leisureSearch">레저검색</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/reviewList">전체리뷰</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/marketList">레저마켓</a></li>
+                <li class="nav-item"><a th:if="${loginId} == null" class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/memberLogin">로그인/회원가입</a></li>
+                <li class="nav-item"><a th:unless="${loginId} == null" class="nav-link px-lg-3 py-3 py-lg-4"
+                                        href="http://localhost:8090/memberLogin"
+                                        th:text="'로그아웃' + '(' + ${loginId} + ')'" onclick="javascript:logout_btn()"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Header-->
+<header class="masthead" style="background-color: #288CFF">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1 class="h1-title">Leisure Search</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="div_box1">
+    <div style="width: 95%; text-align: center;position:relative;bottom:340px;">
+        <form th:action="@{/reviewList}" method="get">
+            <input type="text" name="rebname" style="width: 300px;" placeholder="사업자명을 입력해주세요.">
+            <button type="submit" class="btn_search">검색</button>
+        </form><br>
+    </div>
+    <table class="table table-condensed" style="position:absolute;left:280px;top:160px;">
+        <caption style="caption-side: top; text-align: center;"><strong style="font-size: large">Review List</strong></caption>
+        <thead>
+        <tr style="height:35px;">
+            <th style="width: 40%">리뷰</th>
+            <th style="width: 10%">작성자</th>
+            <th style="width: 20%">사업자명</th>
+            <th style="width: 10%">평점</th>
+            <th style="width: 20%">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="review: ${re_list}" style="height: 35px;">
+            <td><a th:text="${review.recontent}" th:href="@{reviewDetail(id=${review.reid})}"></a></td>
+            <td th:text="${review.reauthor}"></td>
+            <td th:text="${review.rebname}"></td>
+            <td th:text="${review.regrade}"></td>
+            <td th:text="${review.redate}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+<br><br>
+</body>
+</html>

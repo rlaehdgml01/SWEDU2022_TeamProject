@@ -1,0 +1,41 @@
+.btn_search {
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 80px;
+    height: 3.5vh;
+    font-size: small;
+}
+
+.btn_search:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+.btn_board {
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 80px;
+    height: 3vh;
+    font-size: small;
+}
+
+.btn_board:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}

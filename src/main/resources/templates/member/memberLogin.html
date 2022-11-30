@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/member.css" rel="stylesheet"/>
+    <script>
+      function login_btn()
+      {
+        {
+          alert('로그인 실패.');
+        }
+        else
+        {
+          alert('로그인 되었습니다.');
+        }
+      }
+    </script>
+</head>
+<body>
+<!-- Navigation-->
+<!-- Page Header-->
+<div class="wrap">
+    <div class="login">
+        <h2 style="color: #288CFF;">로그인</h2>
+        <form action="/memberLoginDo" method="post" style="display:inline;">
+            <div class="login_id">
+                <h4>Name</h4>
+                <input id="input_name" type="text" name="memberId" placeholder="이름 입력">
+            </div>
+            <div class="login_pw">
+                <h4>Password</h4>
+                <input type="password" name="memberPassword" placeholder="비밀번호 입력"> <br>
+            </div>
+            <br>
+            <div class="submit">
+                <button type="submit" onclick="javascript:login_btn()">로그인</button>
+            </div>
+        </form>
+        <div class="submit2">
+            <button id="signup-btn" type="submit" onClick="location.href='/memberSignup'">회원가입</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

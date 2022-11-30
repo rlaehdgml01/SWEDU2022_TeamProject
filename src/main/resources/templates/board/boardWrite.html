@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>테스트 페이지</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/board.css" rel="stylesheet"/>
+    <link href="css/leisure.css" rel="stylesheet"/>
+    <!--부트스트랩-->
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--주소 찾기 api-->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+    .masthead {
+        height: 2vh;
+    }
+
+    .h1-title {
+        position: relative;
+        bottom: 90px;
+    }
+
+     body {
+      font-size:9pt;
+    }
+    button {
+        font-size:9pt;
+    }
+    table {
+        margin: auto;
+        width: 600px;
+        border-collaps:collapse;
+    }
+    th, td {
+        border:1px solid #cccccc;
+        padding: 3px;
+    }
+
+    .input_title {
+        width:98%;
+    }
+
+    .textarea_content {
+        width:98%;
+        height:70px;
+    }
+   </style>
+    <script type="text/javascript">
+        function logout_btn()
+      {
+        alert('로그아웃 되었습니다.');
+      }
+    </script>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/leisureSearch" id="a_home" style="font-size: x-large;">Leisure Map</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/leisureSearch">레저검색</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/reviewList">전체리뷰</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/marketList">레저마켓</a></li>
+                <li class="nav-item"><a th:if="${loginId} == null" class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:8090/memberLogin">로그인/회원가입</a></li>
+                <li class="nav-item"><a th:unless="${loginId} == null" class="nav-link px-lg-3 py-3 py-lg-4"
+                                        href="http://localhost:8090/memberLogin"
+                                        th:text="'로그아웃' + '(' + ${loginId} + ')'" onclick="javascript:logout_btn()"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Header-->
+<header class="masthead" style="background-color: #288CFF">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1 class="h1-title">Leisure Search</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<!-- 여기부터 컨텐츠를 작성하세요 -->
+<div class="div_box1">
+    <form action="/boardWriteDo" method="post">
+        <table>
+            <tr>
+                <!-- 라벨을 넣으면 제목을 눌렀을 때 커서가 input에 자동으로 들어가게 해준다 id와 일치해야 함 -->
+                <th width="20%"><label for="title">제목</label></th>
+                <td width="80%"><input type="text" name="title" id="title" class="input_title"></td>
+            </tr>
+            <tr>
+                <th><label for="content">내용</label></th>
+                <td><textarea name="content" id="content" class="textarea_content"></textarea></td>
+            </tr>
+            <tr>
+                <th colspan="2" style="text-align: right;"> <!-- colspan: 가로합침 -->
+                    <button type="submit" class="btn_board">작성</button>
+                    <button type="reset" class="btn_board">취소</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

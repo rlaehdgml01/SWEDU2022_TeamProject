@@ -1,0 +1,77 @@
+.select_rebname {
+    background: #dcdcdc;
+    width: 200px;
+    appearance:none; /* 화살표 없애기 */
+}
+
+.btn_review {
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 80px;
+    height: 3vh;
+    font-size: small;
+}
+
+.btn_review:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+.btn_search {
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 80px;
+    height: 3.5vh;
+    font-size: small;
+}
+
+.btn_search:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+.btn_review_detail{
+    color: white;
+    background-color: #288CFF;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 0;
+    transition: .2s ease;
+    width: 150px;
+    height: 4vh;
+    font-size: small;
+    position: relative;
+    left: 350px;
+    top: 30px;
+}
+
+.btn_review_detail:hover{
+    box-shadow: 0 80px 0 0  rgba(0,0,0,0.25) inset,
+                0 -80px 0 0 rgba(0,0,0,0.25) inset;
+}
+
+#a_home {
+  position: relative;
+  right: 700px;
+  bottom: 10px;
+}
